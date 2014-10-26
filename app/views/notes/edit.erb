@@ -1,0 +1,14 @@
+<form action="/notes/<%=@note.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <p>Title:</p>
+  <input type="text" name="note[title]" size="99" value="<%=@note.title%>">
+  <br>
+  <p>Content:</p>
+  <textarea name="note[content]" cols=100 rows=10><%=@note.content%></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+
+

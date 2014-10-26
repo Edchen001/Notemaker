@@ -1,0 +1,16 @@
+<div class="note-loaded">
+  <h1><%=@note.title%> </h1>
+  <p><%=@note.content%> </p>
+
+  <a href="/notes/<%=@note.id%>/edit"><button>Edit</button></a>
+  <form style="display: inline;" action="/notes/<%=@note.id%>" method="POST">
+    <input name="_method" type="hidden" value="delete"/>
+    <input type="submit" value="Delete">
+  </form>
+
+</div>
+
+<div class="note-collapsed">
+  <p><%=@note.title%> </p>
+</div>
+

@@ -1,15 +1,26 @@
+<br>
+<br>
+<div class="jumbotron">
+  <h1>Welcome to Notemaker!</h1>
+  <p>A simple note taking app to save your thoughts.</p>
+  <br>
+  <p><a href="/notes/new" class="btn btn-primary btn-lg" id="createnote">Create a Note</a></p>
+</div>
+  <div id="createnoteform"><%= erb :'/notes/_create' %> </div>
+<br>
+<ul>
+  <% @notes.each do |note| %>
+  <h5 data-id="<%=note.id%>" class="notes" ><%=note.title%>
+  <a href="/notes/<%=note.id%>/edit"><button>Edit</button></a>
+  <form style="display: inline;"action="/notes/<%=note.id%>" method="POST">
+    <input name="_method" type="hidden" value="delete"/>
+    <input type="submit" value="Delete">
+  </form>
 
-  <h1 id="title">Feed Yo'Self!</h1>
-  <br>
-  <%if session[:user_id] != ""%>
-    <h3><a id="create-recipe" href="/recipes/new">Add a recipe!</a></h3>
+  </h5>
   <%end%>
-  <br>
-  <table>
-    <%@recipes.each do |recipe|%>
-    <tr>
-      <td id="recipe"><a id="recipe-name"href="/recipes/<%=recipe.id%>"><%=recipe.name%></a></td>
-      <td id="author-cell"><a id="author-name" href="/user/<%=recipe.author.id%>/profile"><%=recipe.author.username%></a></td>
-     </tr>
-     <%end%>
-  </table>
+</ul>
+<div id="show_note"></div>
+<br>
+
+
