@@ -1,0 +1,13 @@
+
+<h1 id="new-recipe">Add a new recipe!</h1>
+<form action="/recipes/create" method="POST">
+  <input type="text" name="recipe[name]" placeholder="The name of your recipe.">
+  <br>
+  <br>
+  <textarea name="recipe[ingredients]" rows="4" placeholder="List the ingredients in your recipe, separated by a comma."></textarea>
+  <br>
+  <textarea name="recipe[directions]" rows="4" placeholder="Include the steps for making your recipe."></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Add!">
+</form>

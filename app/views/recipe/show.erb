@@ -1,0 +1,20 @@
+<h1><%=@recipe.name%></h1>
+<h2>Added by <%=@recipe.author.username%></h2>
+<h3>
+  <%if @recipe.author.id == session[:user_id]%>
+  <a href="/recipes/<%=@recipe.id%>/edit">Edit this recipe.</a>
+  <a href="/recipes/<%=@recipe.id%>/delete">Delete this recipe.</a>
+  <%end%>
+</h3> <!-- Add link to profile -->
+
+<ul>
+  <li>Ingredients:</li>
+    <ul>
+      <li><%=@recipe.ingredients%></li>
+    </ul>
+  <li>Directions:</li>
+    <ul>
+      <li><%=@recipe.directions%></li>
+    </ul>
+</ul>
+

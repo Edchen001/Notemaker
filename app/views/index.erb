@@ -1,0 +1,15 @@
+
+  <h1 id="title">Feed Yo'Self!</h1>
+  <br>
+  <%if session[:user_id] != ""%>
+    <h3><a id="create-recipe" href="/recipes/new">Add a recipe!</a></h3>
+  <%end%>
+  <br>
+  <table>
+    <%@recipes.each do |recipe|%>
+    <tr>
+      <td id="recipe"><a id="recipe-name"href="/recipes/<%=recipe.id%>"><%=recipe.name%></a></td>
+      <td id="author-cell"><a id="author-name" href="/user/<%=recipe.author.id%>/profile"><%=recipe.author.username%></a></td>
+     </tr>
+     <%end%>
+  </table>
